@@ -12,16 +12,29 @@ class ScoreKeeper extends Component{
         this.setState((currentState) => ({score: currentState.score + 1}))
     }
 
-doubleScore = () =>{
-    this.setState((currentState) => ({score: currentState.score + 1}))
-    this.setState((currentState) => ({score: currentState.score + 1}))
-}
-
-    tripleScore = () =>{
-        this.setState((currentState) => ({score: currentState.score + 1}))
+    doubleScore = () =>{
         this.setState((currentState) => ({score: currentState.score + 1}))
         this.setState((currentState) => ({score: currentState.score + 1}))
     }
+
+    // tripleScore = () =>{
+    //     this.setState((currentState) => ({score: currentState.score + 1}))
+    //     this.setState((currentState) => ({score: currentState.score + 1}))
+    // }
+
+incrementScore(currentState){
+    return {score: currentState.score + 1}
+}
+
+
+tripleScore = () =>{
+    this.setState(this.incrementScore)
+    this.setState(this.incrementScore)
+    this.setState(this.incrementScore)
+}
+
+
+
 
 
     render(){
